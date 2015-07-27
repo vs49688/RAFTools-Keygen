@@ -1,0 +1,14 @@
+apply plugin: 'java'
+
+sourceCompatibility = '1.8'
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+
+if (!hasProperty('mainClass')) {
+    ext.mainClass = 'net.vs49688.raftools.inibin.keygen.Keygen'
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'net.vs49688.raftools.inibin.keygen.Keygen'
+    }
+}
